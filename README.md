@@ -18,7 +18,7 @@ This project aims to deliver a robust and user-friendly platform for managing us
 
 ## Tech Stack
 
-**Client:** React, CSS
+**Client:** React 
 
 **Server:** Node , Express , MongoDB
 
