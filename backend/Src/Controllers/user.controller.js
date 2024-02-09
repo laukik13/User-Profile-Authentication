@@ -132,7 +132,7 @@ const loginUser = asyncHandler(async (req, res) => {
       new ApiResponse(
         201,
         {
-          user: loggedIn,
+          // user: loggedIn,
           accessToken,
           refreshToken,
         },
@@ -325,6 +325,21 @@ const updateCurrentUser = asyncHandler(async (req, res) => {
     .json(new ApiResponse(201, user, "User Update Successfully"));
 });
 
+
+const getAllUser = asyncHandler(async(req,res)=>{
+
+  const user = await User.find();
+
+  if(!user){
+    throw new ApiError(400,"Something Went Wrong While fetching Data")
+  }
+
+  res.status(200).json(
+    new ApiResponse(201,user,"User Data Fetch Success")
+  )
+
+})
+
 const forgotPasswordRequest = asyncHandler(async (req, res) => {
   //get email from user
   //check email
@@ -467,6 +482,7 @@ export {
   refreshAccessToken,
   changePassword,
   getCurrentUser,
+  getAllUser,
   updateCurrentUser,
   updateAvatar,
   forgotPasswordRequest,

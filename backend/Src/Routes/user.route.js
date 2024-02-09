@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { changePassword, forgotPasswordRequest, forgotPasswordReset, getCurrentUser, loginUser, logoutUser, refreshAccessToken, registerUser, updateAvatar, updateCurrentUser } from "../Controllers/user.controller.js";
+import { changePassword, forgotPasswordRequest, forgotPasswordReset, getAllUser, getCurrentUser, loginUser, logoutUser, refreshAccessToken, registerUser, updateAvatar, updateCurrentUser } from "../Controllers/user.controller.js";
 import { upload } from "../Middlewares/Multer.js";
 import { verifyJwt } from "../Middlewares/auth.middleware.js";
 
@@ -26,6 +26,8 @@ router.route("/refresh-accesstoken").post(refreshAccessToken);
 router.route("/changePassword").post(verifyJwt,changePassword);
 
 router.route("/getCurrentUser").get(verifyJwt,getCurrentUser);
+
+router.route("/getAllUser").get(verifyJwt,getAllUser);
 
 router.route("/updateCurrentUser").patch(verifyJwt,upload.single("avatar"),updateCurrentUser);
 
