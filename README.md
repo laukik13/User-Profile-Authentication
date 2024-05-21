@@ -1,4 +1,4 @@
-# User Management Module (MERN)
+# User Management Module
 
 The User Management project built with the MERN stack is a comprehensive solution for handling user authentication, registration, forgot/reset Password and profile management. MongoDB serves as the scalable and flexible database, while Express.js powers the backend API, providing secure routes for user data manipulation. 
 
