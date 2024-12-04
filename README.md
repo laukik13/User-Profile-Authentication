@@ -22,6 +22,3 @@ This project aims to deliver a robust and user-friendly platform for managing us
 
 **Server:** Node , Express , MongoDB
 
-## Authors
-
-- [@laukik13](https://www.github.com/laukik13)
